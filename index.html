@@ -1,0 +1,33 @@
+<html ng-app="ajaxApp">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <h1>Posts</h1>
+    <hr>
+    <div ng-controller="PostsController">
+
+      <button ng-click="getPosts()">getPosts</button>
+      <button ng-click="addPost()">addPost</button>
+      <button ng-click="editPost()">editPost</button>
+      <button ng-click="delPost()">delPost</button>
+      <button ng-click="patch()">patchPost</button>
+      <h1>Response:</h1>
+      <code>{{response}}</code>
+
+      <div ng-repeat="post in posts">
+        <h3>{{post.title}}</h3>
+        <p>{{post.body}}</p>
+      </div>
+    </div>
+  </div>
+    <script src="js/lib/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/PostsController.js"></script>
+</body>
+
+</html>
